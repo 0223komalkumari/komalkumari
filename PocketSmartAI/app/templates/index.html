@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}PocketSmart AI{% endblock %}{% block content %}
+<section class="hero"><div><p class="eyebrow">AI-POWERED BUDGET PLANNING</p><h1>Plan smarter.<br><span>Spend with intention.</span></h1>
+<p class="hero-copy">Build practical plans for interiors, parties, and jewelry with budget-aware recommendations and optional Gemini image understanding.</p>
+<div class="actions">{% if user %}<a class="button" href="/dashboard">Open dashboard</a>{% else %}<a class="button" href="/register">Start planning</a><a class="button secondary" href="/login">Sign in</a>{% endif %}</div></div>
+<div class="hero-card"><div class="mini-label">ONE BUDGET · MANY POSSIBILITIES</div><div class="budget">₹<span>25,000</span></div><div class="bars"><i></i><i></i><i></i><i></i></div><small>Example plan — estimates, not live prices</small></div></section>
+<section class="grid three"><a class="feature" href="/home-planner"><b>01 · HOME</b><h2>Design within budget</h2><p>Rooms, quantities, style and allocations.</p></a>
+<a class="feature" href="/party-planner"><b>02 · PARTY</b><h2>Make the budget stretch</h2><p>Catering, decoration, entertainment and venue allowances.</p></a>
+<a class="feature" href="/jewelry-planner"><b>03 · JEWELRY</b><h2>Match the occasion</h2><p>Style details and optional outfit image.</p></a></section>{% endblock %}

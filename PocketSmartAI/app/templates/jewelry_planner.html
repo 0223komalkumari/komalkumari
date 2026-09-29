@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Jewelry Planner{% endblock %}{% block content %}
+<div class="page-head"><p class="eyebrow">JEWELRY BUDGET PLANNER</p><h1>Find a coordinated look for the occasion.</h1><p>Add an outfit image for broad visual cues such as color and formality.</p></div>
+<div class="planner-layout"><form id="jewelry-form" class="planner-card" enctype="multipart/form-data"><label>Budget (₹)<input name="budget" type="number" min="1" required></label>
+<label>Occasion<input name="occasion" required placeholder="Wedding guest"></label><label>Style<input name="style" value="elegant"></label>
+<label>Outfit description<textarea name="outfit_description" rows="4"></textarea></label><label>City<input name="city" value="India"></label>
+<label>Outfit image<input name="outfit_image" type="file" accept="image/jpeg,image/png,image/webp"></label>
+<button class="button">Generate recommendations</button><p class="form-note">The image is sent to Gemini only when a Gemini key is configured.</p></form>
+<div id="results" class="results"><div class="empty">Your recommendations will appear here.</div></div></div>{% endblock %}
+{% block scripts %}<script>setupPlanner("jewelry-form","/generate-jewelry","multipart");</script>{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Home Planner{% endblock %}{% block content %}
+<div class="page-head"><p class="eyebrow">HOME INTERIOR PLANNER</p><h1>Build a beautiful home without losing the budget.</h1><p>Tell us where you are starting, what you need, and the look you want.</p></div>
+<div class="planner-layout"><form id="home-form" class="planner-card"><label>Total budget (₹)<input name="budget" type="number" min="1" required></label>
+<label>Rooms<input name="rooms" required placeholder="Living Room, Bedroom"></label><label>Style<input name="style" value="modern"></label><label>City<input name="city" value="India"></label>
+<label>Items <span class="muted">(category | quantity | notes)</span><textarea name="items" rows="6" placeholder="ceiling fan | 2 | energy efficient&#10;dining table | 1 | 6 seater"></textarea></label>
+<button class="button">Generate recommendations</button><p class="form-note">Provider links are search pages, not live inventory.</p></form>
+<div id="results" class="results"><div class="empty">Your recommendations will appear here.</div></div></div>{% endblock %}
+{% block scripts %}<script>setupPlanner("home-form","/generate-home","urlencoded");</script>{% endblock %}

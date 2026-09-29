@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}History{% endblock %}{% block content %}
+<div class="page-head"><p class="eyebrow">RECOMMENDATION HISTORY</p><h1>Your saved plans</h1><p>Generated plans are stored locally for your account.</p></div>
+{% if records %}<div class="history-list">{% for r in records %}<div class="history-card"><div class="history-row"><b>{{ r.planner_type|title }}</b><span>{{ r.created_at }}</span><span>#{{ r.id }}</span></div><p>{{ r.response.summary }}</p>
+<div class="tags">{% for x in r.response.recommendations[:4] %}<span>{{ x.name }}</span>{% endfor %}</div></div>{% endfor %}</div>
+{% else %}<div class="empty">No history yet.</div>{% endif %}{% endblock %}
